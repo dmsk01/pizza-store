@@ -6,7 +6,6 @@ import SortSelect from "../../components/SortSelect";
 import "./style.scss";
 
 function HomePage({ pizzas }) {
-  console.log(pizzas);
   return (
     <div className="container">
       <div className="content__top">
@@ -20,8 +19,8 @@ function HomePage({ pizzas }) {
       </div>
       <h2 className="content__title">Все пиццы</h2>
       <div className="content__items">
-        {pizzas.map(({ id, imageUrl, name, price, sizes }) => (
-          <PizzaBlock key={id} img={imageUrl} name={name} price={price} sizes={sizes} />
+        {pizzas.map(({ id, imageUrl, name, price, sizes, types }) => (
+          <PizzaBlock key={id} img={imageUrl} name={name} price={price} sizes={sizes} types={types} />
         ))}
       </div>
     </div>

@@ -1,24 +1,43 @@
 import React, { useState } from "react";
+import cn from "classnames";
 import "./style.scss";
 
 import pizzaImage from "../../assets/img/pizza.jpg";
 
-function PizzaBlock({ img = pizzaImage, name, price, sizes }) {
-  const [size, setSize] = useState("");
-  const [thickness, setThickness] = useState("");
+function PizzaBlock({ img = pizzaImage, name, price, sizes, types }) {
+  const availablePizzasTypes = ["тонкое", "традиционное"];
+  const availablePizzasSizes = [26, 30, 40];
+  const [activeSize, setActiveSize] = useState(sizes[0]);
+  const [activeType, setActiveType] = useState(types[0]);
+
+  const handleSetActieType = (index) => {
+    setActiveType(index);
+  };
+
+  const handleSetActiveSize = (index) => {
+    setActiveSize(index);
+  };
   return (
     <div className="pizza-block">
       <img className="pizza-block__image" src={img} alt="Pizza" />
       <h4 className="pizza-block__title">{name}</h4>
       <div className="pizza-block__selector">
         <ul>
-          <li className="active">тонкое</li>
-          <li>традиционное</li>
+          {availablePizzasTypes.map((type, index) => (
+            <li key={type} onClick={() => handleSetActieType(index)} className={cn({ active: activeType === index, disabled: !types.includes(index) })}>
+              {type}
+            </li>
+          ))}
         </ul>
         <ul>
-          <li className="active">26 см.</li>
+          {/* <li className="active">26 см.</li>
           <li>30 см.</li>
-          <li>40 см.</li>
+          <li>40 см.</li> */}
+          {availablePizzasSizes.map((size, index) => (
+            <li key={size} onClick={() => handleSetActiveSize(index)} className={cn({ active: activeSize === index, disabled: !sizes.includes(size) })}>
+              {size} см.
+            </li>
+          ))}
         </ul>
       </div>
       <div className="pizza-block__bottom">
