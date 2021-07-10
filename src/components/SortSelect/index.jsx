@@ -16,8 +16,6 @@ function SortSelect({ items }) {
 
   useEffect(() => {
     document.body.addEventListener("click", handleOutsideClick);
-
-    console.log(sortRef.current);
   }, []);
 
   const toggleSelectVisible = () => {
