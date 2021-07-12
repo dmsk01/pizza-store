@@ -7,7 +7,7 @@ function SortSelect({ items }) {
   const [isSelectVisible, setSelectVisible] = useState(false);
   const [activeItem, setActiveItem] = useState(0);
 
-  const label = items[activeItem];
+  const label = items[activeItem].name;
 
   const onSelectItem = (index) => {
     setActiveItem(index);
@@ -41,9 +41,9 @@ function SortSelect({ items }) {
         <div className="sort__popup">
           <ul>
             {items &&
-              items.map((item, index) => (
-                <li className={activeItem === index ? "active" : ""} onClick={() => onSelectItem(index)} key={`${item}-${index}`}>
-                  {item}
+              items.map((object, index) => (
+                <li className={activeItem === index ? "active" : ""} onClick={() => onSelectItem(index)} key={`${object.type}-${index}`}>
+                  {object.name}
                 </li>
               ))}
           </ul>
