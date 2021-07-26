@@ -8,6 +8,4 @@ const store = createStore(rootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && wi
 
 window.store = store;
 
-console.log(store);
-
 export default store;

@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, memo } from "react";
 
 import "./style.scss";
 
-function SortSelect({ items }) {
+const SortSelect = memo(({ items }) => {
   const sortRef = useRef();
   const [isSelectVisible, setSelectVisible] = useState(false);
   const [activeItem, setActiveItem] = useState(0);
@@ -51,6 +51,6 @@ function SortSelect({ items }) {
       )}
     </div>
   );
-}
+});
 
 export default SortSelect;

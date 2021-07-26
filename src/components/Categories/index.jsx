@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, memo } from "react";
 import "./style.scss";
 
-function Categories({ items, onClick }) {
+const Categories = memo(({ items, onClick }) => {
   const [activeItem, setActiveItem] = useState(0);
 
   const onSelectItem = (index) => {
     setActiveItem(index);
+    onClick && onClick(index);
   };
   return (
     <div className="categories">
@@ -19,6 +20,6 @@ function Categories({ items, onClick }) {
       </ul>
     </div>
   );
-}
+});
 
 export default Categories;
