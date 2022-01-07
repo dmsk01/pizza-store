@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 import "./style.scss";
 
-import logo from "./assets/pizza-logo.svg";
+import logo from "./assets/pizza.svg";
 
 function Header() {
   return (
@@ -15,7 +15,7 @@ function Header() {
           <div className="header__logo">
             <img width={38} src={logo} alt="Pizza logo" />
             <div>
-              <h1>Pojo Pizza</h1>
+              <h1>Pizza House</h1>
               <p>самая вкусная пицца во вселенной</p>
             </div>
           </div>

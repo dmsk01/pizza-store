@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import cn from "classnames";
 import PropTypes from "prop-types";
-import "./style.scss";
 
 import pizzaImage from "../../assets/img/pizza.jpg";
 
+import "./style.scss";
 function PizzaBlock({ img = pizzaImage, name, price, sizes, types }) {
   const availablePizzasTypes = ["тонкое", "традиционное"];
   const availablePizzasSizes = [26, 30, 40];
@@ -18,6 +18,7 @@ function PizzaBlock({ img = pizzaImage, name, price, sizes, types }) {
   const handleSetActiveSize = (size) => {
     setActiveSize(size);
   };
+
   return (
     <div className="pizza-block">
       <img className="pizza-block__image" src={img} alt="Pizza" />

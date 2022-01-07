@@ -16,7 +16,7 @@ $duration: 0.15s;
   &__items {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    gap: 35px;
   }
 
   &__top {

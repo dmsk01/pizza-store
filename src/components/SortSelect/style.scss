@@ -1,7 +1,8 @@
 $black: #232323;
-$background: #ffdf8c;
+$background: #2d2c41;
 $gray-line: #f6f6f6;
-$orange: #fe5f1e;
+$orange: #ffbf00;
+$college-gray: #f8f8f8;
 
 $container-width: 90%;
 
@@ -9,32 +10,32 @@ $duration: 0.15s;
 
 .sort {
   position: relative;
+  display: flex;
+  align-items: center;
+  svg {
+    margin-left: 8px;
+    margin-bottom: -2px;
+    transition: all 0.3s ease 0s;
+    transform: rotate(180deg);
+    &.rotated {
+      transform: rotate(0deg);
+    }
+  }
   &__label {
     display: flex;
     align-items: center;
-
-    svg {
-      margin-right: 8px;
-      transition: all 0.3s ease 0s;
-      transform: rotate(180deg);
-      &.rotated {
-        transform: rotate(0deg);
-      }
-    }
-
     b {
       margin-right: 8px;
     }
-
     span {
       color: $orange;
       border-bottom: 1px dashed $orange;
       cursor: pointer;
     }
   }
-
   &__popup {
     position: absolute;
+    top: 100%;
     right: 0;
     margin-top: 15px;
     background: #ffffff;
@@ -49,10 +50,10 @@ $duration: 0.15s;
       li {
         padding: 12px 20px;
         cursor: pointer;
-
+        transition: all 0.3s ease 0s;
         &.active,
         &:hover {
-          background: rgba(254, 95, 30, 0.05);
+          background: $college-gray;
         }
 
         &.active {
