@@ -41,12 +41,13 @@ $duration: 0.15s;
     transform: translateY(1px);
   }
 
-  &--circle {
+  &_circle {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 32px;
     height: 32px;
+    border-radius: 50%;
     min-width: 32px;
     padding: 0;
     border-width: 2px;
@@ -61,7 +62,7 @@ $duration: 0.15s;
     }
   }
 
-  &--outline {
+  &_outline {
     background-color: #fff;
     border-color: $orange;
     &,
@@ -103,7 +104,7 @@ $duration: 0.15s;
     margin-right: 14px;
   }
 
-  &--add {
+  &_add {
     svg {
       margin-right: 2px;
     }
@@ -137,7 +138,7 @@ $duration: 0.15s;
     }
   }
 
-  &--cart {
+  &_cart {
     display: flex;
     align-items: center;
     line-height: 23px;

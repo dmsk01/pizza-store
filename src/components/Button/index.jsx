@@ -4,16 +4,17 @@ import cn from "classnames";
 
 import "./style.scss";
 
-function Button({ onClick, className, outline, children }) {
+function Button({ onClick, className, outline, children, type = "button" }) {
   const handleClick = () => {
     onClick && onClick();
   };
   return (
     <button
       className={cn(className, "button", {
-        "button--outline": outline,
+        "button_outline": outline,
       })}
       onClick={handleClick}
+      type={type}
     >
       {children}
     </button>

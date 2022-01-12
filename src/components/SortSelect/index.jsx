@@ -9,7 +9,7 @@ const SortSelect = memo(({ items = [], activeSortType, onClickSortType }) => {
   const activeLabel = items.find((object) => object.type === activeSortType).name;
 
   const onSelectItem = (index) => {
-    onClickSortType(index);
+    onClickSortType && onClickSortType(index);
     toggleSelectVisible();
   };
 
@@ -21,8 +21,10 @@ const SortSelect = memo(({ items = [], activeSortType, onClickSortType }) => {
     setSelectVisible(!isSelectVisible);
   };
 
-  const handleOutsideClick = (e) => {
-    if (!e.path.includes(sortRef.current)) {
+  const handleOutsideClick = (event) => {
+    const path = event.path || (event.composedPath && event.composedPath());
+
+    if (!path.includes(sortRef.current)) {
       setSelectVisible(false);
     }
   };
